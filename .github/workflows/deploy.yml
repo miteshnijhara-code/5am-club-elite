@@ -16,6 +16,6 @@ jobs:
           server: ftp.the5amclub.online
           username: u488679753.mnijhara
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: public_html/public_html/
+          server-dir: public_html/
           local-dir: ./out/
           dangerous-clean-slate: true
