@@ -35,28 +35,24 @@ const TRACKS = [
 
 const TESTIMONIALS = [
   {
-    name: 'Riya S.',
-    role: 'Entrepreneur',
+    role: 'Entrepreneur, Mumbai',
     text: 'I never thought I could wake up at 5 AM consistently. After the 21-day challenge, it became the best part of my day. The accountability structure is what makes it stick.',
-    initial: 'R',
+    initial: '🌅',
   },
   {
-    name: 'Arjun M.',
-    role: 'Software Engineer',
+    role: 'Software Engineer, Pune',
     text: 'The penalty system sounds harsh but it\'s exactly what I needed. Knowing there\'s a consequence made me show up every single day. Completed 21 days and never looked back.',
-    initial: 'A',
+    initial: '⚡',
   },
   {
-    name: 'Sneha K.',
-    role: 'Fitness Coach',
+    role: 'Fitness Coach, Bangalore',
     text: 'The 15-minute sessions are perfectly designed — short enough to not feel like a burden, powerful enough to completely shift your morning energy. Game changer.',
-    initial: 'S',
+    initial: '🔥',
   },
   {
-    name: 'Dev P.',
-    role: 'Student',
+    role: 'Student, Delhi',
     text: 'Met incredible people from across the country at 5 AM. The community alone is worth it. We push each other every morning and the energy is unlike anything I\'ve experienced.',
-    initial: 'D',
+    initial: '🏆',
   },
 ];
 
@@ -266,16 +262,13 @@ export default function LandingPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {TESTIMONIALS.map((t) => (
-              <div key={t.name} className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-yellow-500/20 transition-colors">
+            {TESTIMONIALS.map((t, i) => (
+              <div key={i} className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-yellow-500/20 transition-colors">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center text-black font-black text-lg flex-shrink-0">
+                  <div className="w-12 h-12 bg-yellow-500/10 border border-yellow-500/20 rounded-full flex items-center justify-center text-2xl flex-shrink-0">
                     {t.initial}
                   </div>
-                  <div>
-                    <div className="font-black">{t.name}</div>
-                    <div className="text-gray-500 text-sm">{t.role}</div>
-                  </div>
+                  <div className="text-gray-400 text-sm">{t.role}</div>
                 </div>
                 <p className="text-gray-300 leading-relaxed text-sm">&ldquo;{t.text}&rdquo;</p>
                 <div className="flex gap-1 mt-4">
@@ -283,6 +276,33 @@ export default function LandingPage() {
                     <span key={i} className="text-yellow-500 text-sm">★</span>
                   ))}
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section className="py-24 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-yellow-500 text-sm font-bold uppercase tracking-widest mb-3">Who We Are</p>
+            <h2 className="text-4xl md:text-5xl font-black">Built by Early Risers,<br />For Early Risers</h2>
+            <p className="text-gray-400 mt-6 max-w-2xl mx-auto text-lg leading-relaxed">
+              We are a small team obsessed with one idea — that winning your morning means winning your life. Every tool, session, and system we build is designed to make 5 AM the most powerful hour of your day.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { icon: '🎯', title: 'Accountability First', desc: 'We built real consequences into the system because motivation fades. Structure doesn\'t.' },
+              { icon: '🌍', title: 'Global Community', desc: 'Members from 11 countries showing up at the same hour. You are never waking up alone.' },
+              { icon: '🔬', title: 'Science-Backed', desc: 'Every track and session is designed around sleep science, habit formation, and peak performance research.' },
+            ].map((item) => (
+              <div key={item.title} className="bg-white/5 border border-white/10 rounded-3xl p-8 text-center hover:border-yellow-500/20 transition-colors">
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <div className="font-black text-lg mb-3">{item.title}</div>
+                <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
