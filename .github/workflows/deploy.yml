@@ -25,4 +25,4 @@ jobs:
           rsync -avz --delete \
             -e "ssh -p 65002 -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" \
             ./out/ \
-            u488679753@srv1822.hstgr.io:~/public_html/
+            u488679753@srv1822.hstgr.io:~/

@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import LiveCounter from './components/LiveCounter';
 
 const AI_QUOTES = [
@@ -140,7 +141,7 @@ export default function LandingPage() {
       {/* NAV */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/90 backdrop-blur-md border-b border-white/10' : 'bg-transparent'}`}>
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <span className="text-lg font-black text-yellow-500 tracking-tight">5 AM CLUB</span>
+          <Link href="/" className="text-lg font-black text-yellow-500 tracking-tight hover:opacity-80 transition-opacity">5 AM CLUB</Link>
           <div className="flex items-center gap-6">
             <a href="#how-it-works" className="hidden md:block text-sm text-gray-400 hover:text-white transition-colors">How it works</a>
             <a href="#tracks" className="hidden md:block text-sm text-gray-400 hover:text-white transition-colors">Tracks</a>
