@@ -1,7 +1,7 @@
 {
-  "name": "five-am-club",
-  "version": "1.0.0",
-  "main": "index.ts",
+  "name": "5am-club-elite",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.48.1",
+    "@tailwindcss/postcss": "^4.0.0",
+    "framer-motion": "^12.0.0",
     "lucide-react": "^0.474.0",
     "next": "15.1.0",
     "react": "^19.0.0",
