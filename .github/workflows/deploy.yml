@@ -2,14 +2,14 @@ name: Deploy to Hostinger
 on: [push]
 jobs:
   web-deploy:
-    name: Deploy
+    name: Build and Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+      - name: Install Dependencies
+        run: npm install
       - name: Build
-        run: |
-          npm install
-          npm run build
+        run: npm run build
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
