@@ -9,7 +9,7 @@ const withPWA = withPWAInit({
 
 const nextConfig: NextConfig = {
   output: 'export',
-  // Add other next config here
+  trailingSlash: true,
 };
 
 export default withPWA(nextConfig);
