@@ -31,8 +31,8 @@ export default function LandingPage() {
       {/* Payment Funnel */}
       <section className="py-20 px-6 text-center">
         <h2 className="text-4xl font-bold mb-10">SECURE YOUR MEMBERSHIP</h2>
-        <div className="bg-white p-8 rounded-3xl mx-auto w-72 mb-6">
-          <img src="/qr-code.png" alt="UPI QR Code" className="w-full" />
+        <div className="bg-white p-6 rounded-3xl mx-auto w-72 mb-6">
+          <img src="https://via.placeholder.com/256?text=Your+UPI+QR+Code" alt="UPI QR Code" className="w-full" />
         </div>
         <p className="text-xl font-bold text-yellow-500">Scan UPI to pay membership fee.</p>
         <p className="text-gray-500 mt-2">After payment, verify with your UTR ID.</p>
