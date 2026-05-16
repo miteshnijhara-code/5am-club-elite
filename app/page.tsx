@@ -106,6 +106,7 @@ export default function LandingPage() {
           <div className="flex items-center gap-6">
             <a href="#how-it-works" className="hidden md:block text-sm text-gray-400 hover:text-white transition-colors">How it works</a>
             <a href="#tracks" className="hidden md:block text-sm text-gray-400 hover:text-white transition-colors">Tracks</a>
+            <a href="#app" className="hidden md:block text-sm text-gray-400 hover:text-white transition-colors">App</a>
             <a href="#testimonials" className="hidden md:block text-sm text-gray-400 hover:text-white transition-colors">Stories</a>
             <a href="/login" className="text-sm font-bold bg-yellow-500 text-black px-5 py-2 rounded-full hover:bg-yellow-400 transition-colors">Member Login</a>
           </div>
@@ -247,6 +248,199 @@ export default function LandingPage() {
                 <h3 className="text-xl font-black mb-2">{track.title}</h3>
                 <p className="text-yellow-500 text-sm font-semibold mb-4">Led by {track.lead}</p>
                 <p className="text-gray-400 text-sm leading-relaxed">{track.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* APP DOWNLOAD */}
+      <section id="app" className="py-24 px-6 relative overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/5 via-transparent to-yellow-500/5 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-yellow-500/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-yellow-500/5 rounded-full blur-[100px] pointer-events-none" />
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/30 text-yellow-500 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+              <span className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse inline-block" />
+              Now Available
+            </div>
+            <h2 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
+              The Alarm That<br />
+              <span className="text-yellow-500">Cannot Be Snoozed.</span>
+            </h2>
+            <p className="text-gray-400 text-xl max-w-2xl mx-auto leading-relaxed">
+              The world&apos;s first accountability alarm. It rings at 5 AM, vibrates your phone, and the <strong className="text-white">only way to silence it</strong> is to join the live session. Stay 15 minutes. Miss it — it comes back.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+            {/* Left — Phone mockup */}
+            <div className="relative flex justify-center">
+              {/* Glow rings */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-64 h-64 rounded-full border border-yellow-500/10 animate-ping" style={{ animationDuration: '3s' }} />
+                <div className="absolute w-80 h-80 rounded-full border border-yellow-500/5 animate-ping" style={{ animationDuration: '4s', animationDelay: '1s' }} />
+              </div>
+
+              {/* Phone frame */}
+              <div className="relative z-10 w-64 animate-float">
+                <div className="bg-gray-900 rounded-[3rem] border-4 border-gray-700 shadow-2xl shadow-yellow-500/20 overflow-hidden">
+                  {/* Notch */}
+                  <div className="bg-black h-8 flex items-center justify-center">
+                    <div className="w-20 h-4 bg-gray-900 rounded-full" />
+                  </div>
+
+                  {/* Screen — Alarm state */}
+                  <div className="bg-black px-4 py-6 min-h-[480px] flex flex-col items-center justify-center text-center">
+                    {/* Pulsing alarm icon */}
+                    <div className="relative mb-6">
+                      <div className="absolute inset-0 rounded-full bg-red-500/30 animate-ping" />
+                      <div className="relative w-20 h-20 bg-red-500/20 rounded-full flex items-center justify-center border border-red-500/40">
+                        <span className="text-3xl">🔔</span>
+                      </div>
+                    </div>
+                    <div className="text-yellow-500 text-xs font-bold uppercase tracking-widest mb-1">5 AM CLUB</div>
+                    <div className="text-white text-2xl font-black mb-1">WAKE UP.</div>
+                    <div className="text-gray-500 text-xs mb-6">Join to silence this alarm</div>
+
+                    {/* Timer */}
+                    <div className="bg-gray-900 rounded-2xl p-3 w-full mb-4 border border-white/10">
+                      <div className="text-xs text-gray-500 mb-1">Session Timer</div>
+                      <div className="text-yellow-500 text-2xl font-black">15:00</div>
+                      <div className="w-full bg-gray-800 rounded-full h-1 mt-2">
+                        <div className="bg-yellow-500 h-1 rounded-full w-0" />
+                      </div>
+                    </div>
+
+                    {/* CTA button */}
+                    <div className="w-full bg-yellow-500 rounded-2xl py-3 flex items-center justify-center gap-2">
+                      <span className="text-black font-black text-sm">JOIN TO SILENCE</span>
+                    </div>
+                  </div>
+
+                  {/* Home bar */}
+                  <div className="bg-black h-8 flex items-end justify-center pb-2">
+                    <div className="w-24 h-1 bg-gray-700 rounded-full" />
+                  </div>
+                </div>
+
+                {/* Floating badges */}
+                <div className="absolute -right-8 top-16 bg-green-500 text-black text-xs font-black px-3 py-1 rounded-full shadow-lg">
+                  ✓ Streak: 7
+                </div>
+                <div className="absolute -left-10 bottom-24 bg-white/10 backdrop-blur border border-white/20 text-white text-xs font-bold px-3 py-2 rounded-xl shadow-lg">
+                  🔥 5,500+ members
+                </div>
+              </div>
+            </div>
+
+            {/* Right — Features + Download */}
+            <div>
+              {/* Feature list */}
+              <div className="space-y-5 mb-10">
+                {[
+                  {
+                    icon: '🔔',
+                    title: 'Unstoppable 5 AM Alarm',
+                    desc: 'Rings at exactly 5 AM with full-volume audio + haptic vibration. Cannot be dismissed from the lock screen. The only off switch is joining the session.',
+                  },
+                  {
+                    icon: '📹',
+                    title: 'Live Session Lock',
+                    desc: 'Embedded Jitsi Meet session opens inside the app. Stay 15 minutes to complete your check-in. Leave early — alarm restarts immediately.',
+                  },
+                  {
+                    icon: '🔥',
+                    title: 'Streak Engine',
+                    desc: 'Every completed session builds your streak. Miss one day and it resets to zero. Your streak is your identity in this club.',
+                  },
+                  {
+                    icon: '⚡',
+                    title: 'Background Persistence',
+                    desc: 'Even if you close the app, the session timer keeps running. Your phone knows if you left. There is no escape.',
+                  },
+                  {
+                    icon: '🤝',
+                    title: 'Accountability Partner',
+                    desc: 'Matched with a wake-up buddy every morning. They see if you showed up. You see if they did. Mutual accountability at 5 AM.',
+                  },
+                ].map((f) => (
+                  <div key={f.title} className="flex gap-4 items-start group">
+                    <div className="w-10 h-10 bg-yellow-500/10 border border-yellow-500/20 rounded-xl flex items-center justify-center text-lg flex-shrink-0 group-hover:bg-yellow-500/20 transition-colors">
+                      {f.icon}
+                    </div>
+                    <div>
+                      <div className="font-black mb-1">{f.title}</div>
+                      <p className="text-gray-400 text-sm leading-relaxed">{f.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Download buttons */}
+              <div className="space-y-4">
+                <p className="text-gray-500 text-xs uppercase tracking-widest font-bold mb-4">Download the App</p>
+
+                {/* Android */}
+                <a
+                  href="https://expo.dev/accounts/mnijhara/projects/five-am-club/builds/c3b1df80-b2c1-4092-b35f-fca2756625e6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-yellow-500/30 rounded-2xl px-6 py-4 transition-all group"
+                >
+                  <div className="w-10 h-10 flex-shrink-0">
+                    <svg viewBox="0 0 24 24" fill="none" className="w-10 h-10">
+                      <path d="M17.523 15.341l1.5-2.598a.5.5 0 00-.866-.5l-1.52 2.633A9.5 9.5 0 0112 14a9.5 9.5 0 00-4.637 1.876l-1.52-2.633a.5.5 0 00-.866.5l1.5 2.598A9.5 9.5 0 002.5 22h19a9.5 9.5 0 00-3.977-6.659zM8.5 19a1 1 0 110-2 1 1 0 010 2zm7 0a1 1 0 110-2 1 1 0 010 2z" fill="#3DDC84"/>
+                      <path d="M7 8l-1.5-2.6M17 8l1.5-2.6M9 2l1 2M15 2l-1 2" stroke="#3DDC84" strokeWidth="1.5" strokeLinecap="round"/>
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-xs text-gray-500 uppercase tracking-widest">Download for</div>
+                    <div className="font-black text-lg group-hover:text-yellow-500 transition-colors">Android</div>
+                  </div>
+                  <div className="text-gray-600 group-hover:text-yellow-500 transition-colors">→</div>
+                </a>
+
+                {/* iOS */}
+                <div className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl px-6 py-4 opacity-60 cursor-not-allowed">
+                  <div className="w-10 h-10 flex-shrink-0">
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 text-gray-400">
+                      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-xs text-gray-500 uppercase tracking-widest">Coming Soon</div>
+                    <div className="font-black text-lg text-gray-500">iOS App Store</div>
+                  </div>
+                  <div className="text-xs bg-yellow-500/10 text-yellow-500 border border-yellow-500/20 px-2 py-1 rounded-full font-bold">Soon</div>
+                </div>
+
+                {/* PWA fallback */}
+                <div className="text-center pt-2">
+                  <p className="text-gray-600 text-xs">
+                    On iPhone? Open this site in Safari → tap <strong className="text-gray-400">Share</strong> → <strong className="text-gray-400">Add to Home Screen</strong> for the full app experience.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom social proof */}
+          <div className="mt-20 grid grid-cols-3 gap-6 border-t border-white/10 pt-12">
+            {[
+              { stat: '4.9★', label: 'Average Rating', sub: 'From early adopters' },
+              { stat: '< 5MB', label: 'App Size', sub: 'Lightweight & fast' },
+              { stat: '100%', label: 'Free to Download', sub: 'Pay only to join a batch' },
+            ].map((item) => (
+              <div key={item.label} className="text-center">
+                <div className="text-3xl font-black text-yellow-500 mb-1">{item.stat}</div>
+                <div className="font-bold text-sm mb-1">{item.label}</div>
+                <div className="text-gray-500 text-xs">{item.sub}</div>
               </div>
             ))}
           </div>
