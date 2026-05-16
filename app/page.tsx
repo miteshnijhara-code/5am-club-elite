@@ -35,28 +35,28 @@ const TRACKS = [
 
 const TESTIMONIALS = [
   {
-    name: 'Pritam Potghan',
-    role: 'Medical Student',
-    text: 'It is an amazing experience to be awake before the world wakes up — to experience the silence, feel connected with yourself. It\'s a worthy investment if you want to enhance your life.',
-    initial: 'P',
+    name: 'Riya S.',
+    role: 'Entrepreneur',
+    text: 'I never thought I could wake up at 5 AM consistently. After the 21-day challenge, it became the best part of my day. The accountability structure is what makes it stick.',
+    initial: 'R',
   },
   {
-    name: 'Anu Prabhakar',
-    role: 'Athlete',
-    text: 'Not only is it a habit — with this club I get to witness so many creative ideas from people of different backgrounds. I now look forward to waking up early every single day.',
+    name: 'Arjun M.',
+    role: 'Software Engineer',
+    text: 'The penalty system sounds harsh but it\'s exactly what I needed. Knowing there\'s a consequence made me show up every single day. Completed 21 days and never looked back.',
     initial: 'A',
   },
   {
-    name: 'Paras Chhabra',
-    role: 'Software Engineer',
-    text: 'Joining the 5AM club was the best decision I took. It works as a keystone habit helping me develop other good habits — working out, eating right, planning my day better.',
-    initial: 'P',
+    name: 'Sneha K.',
+    role: 'Fitness Coach',
+    text: 'The 15-minute sessions are perfectly designed — short enough to not feel like a burden, powerful enough to completely shift your morning energy. Game changer.',
+    initial: 'S',
   },
   {
-    name: 'Vikrant Patil',
-    role: 'Sustainable Lifestyle Practitioner',
-    text: 'The club has awesome facilitators which made me not miss a single day in two and a half months. Pleasant start of day with body-focused movements and life-enhancing meditations.',
-    initial: 'V',
+    name: 'Dev P.',
+    role: 'Student',
+    text: 'Met incredible people from across the country at 5 AM. The community alone is worth it. We push each other every morning and the energy is unlike anything I\'ve experienced.',
+    initial: 'D',
   },
 ];
 
@@ -282,46 +282,6 @@ export default function LandingPage() {
                   {Array(5).fill(null).map((_, i) => (
                     <span key={i} className="text-yellow-500 text-sm">★</span>
                   ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ABOUT */}
-      <section className="py-24 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-yellow-500 text-sm font-bold uppercase tracking-widest mb-3">The Team</p>
-            <h2 className="text-4xl md:text-5xl font-black">About Us</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                name: 'Harsh Ramteke',
-                role: 'Chief Visionary & CEO',
-                bio: 'CS grad from IIIT Nagpur. Brings a unique blend of technical discipline and creative vision. Thrives on building cool things. When not building, you\'ll find him painting or sketching.',
-                initial: 'H',
-                color: 'bg-yellow-500',
-              },
-              {
-                name: 'Pranav Patil',
-                role: 'Lead Coach',
-                bio: 'Happiness Coach. Gold Medalist in Industrial Engineering from Pune University, MBA from IIM Lucknow. Former consultant for NSE, Raymond, Mahindra. Now on a journey to discover simpler ways to a happy, fulfilling life.',
-                initial: 'P',
-                color: 'bg-white',
-              },
-            ].map((person) => (
-              <div key={person.name} className="bg-white/5 border border-white/10 rounded-3xl p-8 flex gap-6 items-start hover:border-yellow-500/20 transition-colors">
-                <div className={`w-16 h-16 ${person.color} rounded-2xl flex items-center justify-center text-black font-black text-2xl flex-shrink-0`}>
-                  {person.initial}
-                </div>
-                <div>
-                  <div className="font-black text-xl mb-1">{person.name}</div>
-                  <div className="text-yellow-500 text-sm font-semibold mb-3">{person.role}</div>
-                  <p className="text-gray-400 text-sm leading-relaxed">{person.bio}</p>
                 </div>
               </div>
             ))}
