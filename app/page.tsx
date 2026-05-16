@@ -2,6 +2,44 @@
 import React, { useState, useEffect } from 'react';
 import LiveCounter from './components/LiveCounter';
 
+const AI_QUOTES = [
+  { text: "Win the morning, win the day.", author: "Tim Ferriss" },
+  { text: "The secret of your future is hidden in your daily routine.", author: "Mike Murdock" },
+  { text: "Discipline is choosing between what you want now and what you want most.", author: "Abraham Lincoln" },
+  { text: "The early morning has gold in its mouth.", author: "Benjamin Franklin" },
+  { text: "It is well to be up before daybreak, for such habits contribute to health, wealth, and wisdom.", author: "Aristotle" },
+  { text: "Your future self is watching you right now through your memories.", author: "Aubrey de Grey" },
+  { text: "Small disciplines repeated with consistency every day lead to great achievements.", author: "John C. Maxwell" },
+  { text: "Every morning you have two choices: continue to sleep with your dreams, or wake up and chase them.", author: "Unknown" },
+];
+
+function AIQuote() {
+  const [idx, setIdx] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisible(false);
+      setTimeout(() => {
+        setIdx(i => (i + 1) % AI_QUOTES.length);
+        setVisible(true);
+      }, 400);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const q = AI_QUOTES[idx];
+  return (
+    <div className={`transition-opacity duration-400 ${visible ? 'opacity-100' : 'opacity-0'} bg-white/5 border border-white/10 rounded-2xl px-6 py-4 max-w-xl mx-auto mb-8`}>
+      <div className="text-xs text-yellow-500 font-bold uppercase tracking-widest mb-2 flex items-center gap-2 justify-center">
+        <span>✦</span> AI Morning Wisdom <span>✦</span>
+      </div>
+      <p className="text-white font-semibold text-base leading-relaxed mb-1">&ldquo;{q.text}&rdquo;</p>
+      <p className="text-gray-500 text-xs">— {q.author}</p>
+    </div>
+  );
+}
+
 const TRACKS = [
   {
     title: 'The Discipline of Brahma Muhurta',
@@ -113,37 +151,44 @@ export default function LandingPage() {
         </div>
       </nav>
 
-      {/* HERO */}
+      {/* HERO — Alarm First */}
       <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-16 overflow-hidden">
-        {/* Background glow */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-yellow-500/10 rounded-full blur-[120px] pointer-events-none" />
+        {/* Background */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-red-500/5 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-yellow-500/8 rounded-full blur-[80px] pointer-events-none" />
 
-        <div className="relative z-10 max-w-4xl mx-auto animate-fade-up">
-          <div className="inline-flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/30 text-yellow-500 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-8">
-            <span className="w-2 h-2 bg-yellow-500 rounded-full pulse-ring inline-block" />
-            Next batch: 1 – 21 June
+        <div className="relative z-10 max-w-5xl mx-auto animate-fade-up">
+
+          {/* Live badge */}
+          <div className="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-8">
+            <span className="w-2 h-2 bg-red-500 rounded-full pulse-ring inline-block" />
+            Alarm fires at 5:00 AM sharp — every single day
           </div>
 
+          {/* Main headline */}
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-black leading-none mb-6 tracking-tight">
-            CRACK THE<br />
-            <span className="text-yellow-500">21-DAY</span><br />
-            WAKE-UP-ATHON
+            THE ALARM<br />
+            THAT <span className="text-yellow-500">CANNOT</span><br />
+            BE SNOOZED.
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-4 leading-relaxed">
-            A daily 15-minute power session at 5 AM. Miss once — you pay a penalty. Complete 21 days — you become a member for life.
+          <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-6 leading-relaxed">
+            At 5 AM, your phone rings at full volume. Haptics shake it. The <strong className="text-white">only way to silence it</strong> is to join the live session and stay for 15 minutes.
           </p>
+
+          {/* AI Quote rotator */}
+          <AIQuote />
 
           <LiveCounter />
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
-            <a href="https://rzp.io/l/5am-club-entry" target="_blank" rel="noopener noreferrer"
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-2">
+            <a href="#app"
               className="bg-yellow-500 hover:bg-yellow-400 text-black font-black text-lg px-10 py-4 rounded-full transition-all hover:scale-105 shadow-lg shadow-yellow-500/20">
-              Secure Your Spot — ₹999
+              Download the App
             </a>
-            <a href="#how-it-works"
-              className="border border-white/20 hover:border-white/50 text-white font-bold text-lg px-10 py-4 rounded-full transition-all hover:bg-white/5">
-              See How It Works
+            <a href="https://rzp.io/l/5am-club-entry" target="_blank" rel="noopener noreferrer"
+              className="border border-white/20 hover:border-yellow-500/50 text-white font-bold text-lg px-10 py-4 rounded-full transition-all hover:bg-white/5">
+              Join Next Batch — ₹999
             </a>
           </div>
         </div>

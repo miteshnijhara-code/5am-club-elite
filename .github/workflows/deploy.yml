@@ -6,16 +6,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Install Dependencies
         run: npm install
+
       - name: Build
         run: npm run build
-      - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ftp.the5amclub.online
-          username: u488679753.mnijhara
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: public_html/
-          local-dir: ./out/
-          dangerous-clean-slate: true
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -p 65002 srv1822.hstgr.io >> ~/.ssh/known_hosts
+
+      - name: Deploy via rsync over SSH
+        run: |
+          rsync -avz --delete \
+            -e "ssh -p 65002 -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" \
+            ./out/ \
+            u488679753@srv1822.hstgr.io:~/public_html/
